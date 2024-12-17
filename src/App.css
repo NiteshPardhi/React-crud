@@ -1,0 +1,31 @@
+.header{
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: aliceblue;
+    background-color: rgb(118, 118, 245);
+    border-radius: 10px;
+    padding: 3px;
+  }
+}
+h1{
+  font-size: 20px;
+  margin-left: 40px;
+}
+.add_btn{
+  margin-right: 30px;
+  justify-content: flex-end;
+}
+.add_btn:hover{
+  background-color: aqua;
+  color: black;
+}
+.table{
+  margin: 0px 20px 0px 40px;
+  width: 95%;
+  text-align: center;
+}
