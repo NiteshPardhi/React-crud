@@ -1,59 +1,22 @@
 
-import { useEffect, useState } from 'react';
 import './App.css';
-import { EmployeeData } from './employeeData';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EmployeesTable from './employees_table';
+import CreateEmployees from './create_employee';
+import ViewEmployees from './view_employee';
+import EditEmployees from './edit_employee';
 
 function App() {
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(EmployeeData)
-  }, []);
-
-  return (
-    <div className="App">
-
-      <div className='header'>
-        <h1>Employees Data</h1>
-        <button className='btn add_btn' type='submit'>Add Employee</button>
-      </div>
-
-      <div>
-        <table className='table table-bordered'>
-          <thead>
-            <tr>
-              <td>Sr.No</td>
-              <td>First Name</td>
-              <td>Last Name</td>
-              <td>Age</td>
-              <td>Contact No</td>
-              <td>Actions</td>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              data.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{item.firstName}</td>
-                    <td>{item.lastName}</td>
-                    <td>{item.age}</td>
-                    <td>{item.contact}</td>
-                    <td>
-                      <button className='btn btn-primary'>Edit</button>
-                      <button className='btn btn-danger mx-2'>Delete</button>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<EmployeesTable/>}></Route>
+        <Route path='/employee/create' element={<CreateEmployees/>}></Route>
+        <Route path='/employee/edit/:id' element={<EditEmployees/>}></Route>
+        <Route path='/employee/view/:id' element={<ViewEmployees/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
