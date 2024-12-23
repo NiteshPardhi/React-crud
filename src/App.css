@@ -1,9 +1,16 @@
+.container{
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0  20px rgba(0, 0, 0, 0.2);
+  margin: 50px 50px 50px 50px;
+}
 .heading{
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   font-weight: 300;
   font-size: 40px;
   color: rgb(94, 94, 97);
+  margin-bottom: 50px;
 }
 .add_btn{
   margin: 40px 0px 10px 40px;
@@ -26,9 +33,9 @@
 .actions{
   width: 20%;
 }
-.create_form{
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 0  20px rgba(0, 0, 0, 0.2);
-  margin: 50px 100px 50px 100px;
+.data_view{
+  margin: 20px 0px 0px 40px;
+}
+.text{
+  margin-left: 40px;
 }
