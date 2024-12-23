@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 export default function CreateUpdateEmployees() {
@@ -106,7 +106,7 @@ export default function CreateUpdateEmployees() {
     };
 
     return (
-        <div className="container">
+        <Container>
             <div className="header">
                 <h3 className="heading">
                     {param.id ? "Update Employee" : "Create Employee"}
@@ -252,6 +252,6 @@ export default function CreateUpdateEmployees() {
                     </Link>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 }

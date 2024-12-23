@@ -21,6 +21,11 @@
   background-color: aqua;
   color: black;
 }
+.back_btn{
+  margin: 40px 0px 10px 85px;
+  background-color: rgb(47, 92, 47);
+  color: aliceblue;
+}
 .back_btn:hover{
   background-color: rgb(119, 116, 118);
   color: white;
@@ -38,4 +43,10 @@
 }
 .text{
   margin-left: 40px;
+}
+.view_data{
+  border: 1px solid gray;
+  /* width: 100px; */
+  /* height: 30px; */
+  padding: 10px;
 }

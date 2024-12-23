@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 export default function ViewEmployees() {
@@ -12,39 +13,31 @@ export default function ViewEmployees() {
   //console.log(filterData);
 
   return (
-    <div className="container">
+    <div className="">
       <div className="header">
         <h3 className="heading">View Employee</h3>
-        <Link to={"/"} className="btn add_btn">
+        <Link to={"/"} className="btn back_btn">
           Go Back
         </Link>
 
         <div className="data_view">
           {filterData.map((item, index) => {
             return (
-              <>
-                <p>
-                  <strong>Employee ID:</strong> {item.id}
-                </p>
-                <p>
-                  <strong>First Name:</strong> {item.firstName}
-                </p>
-                <p>
-                  <strong>Last Name:</strong> {item.lastName}
-                </p>
-                <p>
-                  <strong>Employee Age:</strong> {item.age}
-                </p>
-                <p>
-                  <strong>Contact Number:</strong> {item.contact_no}
-                </p>
-                <p>
-                  <strong>Email:</strong> {item.email}
-                </p>
-                <p>
-                  <strong>Address:</strong> {item.address}
-                </p>
-              </>
+            <Container>
+              <Row>
+                <Col className="view_data"><strong>Employee ID:</strong> {item.id}</Col>
+                <Col className="view_data"><strong>First Name:</strong> {item.firstName}</Col>
+                <Col className="view_data"> <strong>Last Name:</strong> {item.lastName}</Col>
+              </Row>
+              <Row>
+                <Col className="view_data"><strong>Employee Age:</strong> {item.age}</Col>
+                <Col className="view_data"><strong>Contact Number:</strong> {item.contact_no}</Col>
+              </Row>
+              <Row>
+                <Col className="view_data"><strong>Email:</strong> {item.email}</Col>
+                <Col className="view_data"><strong>Address:</strong> {item.address}</Col>
+              </Row>
+            </Container>
             );
           })}
         </div>
