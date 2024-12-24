@@ -41,8 +41,9 @@
 .data_view{
   margin: 20px 0px 0px 40px;
 }
-.text{
+.ml-40{
   margin-left: 40px;
+  margin-bottom: 5px;
 }
 .view_data{
   border: 1px solid gray;

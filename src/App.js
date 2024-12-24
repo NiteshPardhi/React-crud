@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EmployeesTable from './employees_table';
 import ViewEmployees from './view_employee';
 import CreateUpdateEmployees from './employee_form';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return(

@@ -13,10 +13,11 @@ function EmployeesTable() {
     }
 
     //for get and set the data
-    const [data, setData] = useState([]);
+    var [data, setData] = useState([]);
     useEffect(() => {
         setData(EmployeeData);
     }, []);
+    var givenData = [...EmployeeData];
 
     //for navigate programatically
     const navigate = useNavigate();
@@ -40,12 +41,25 @@ function EmployeesTable() {
         }
     };
 
+    //for filter table data
+    const filterFunction = (e) => {
+        var searchInput = e;
+
+        var filterData = givenData.filter((item) => {
+          return item.firstName.toLowerCase().includes(searchInput.toLowerCase());
+        });
+        setData(filterData);
+    }
+
     return (
         <>
             <div className="Employees_table">
                 <h3 className="heading">Employees Details</h3>
-                <div>
-                    <p className="text">Here we can show static data from json </p>
+                <div className="ml-40">
+                    <p>Here we can show static data from json </p>
+                </div>
+                <div className="ml-40">
+                    <input placeholder="Serach by Name..." onChange={e => filterFunction(e.target.value)}></input>
                 </div>
                 <div>
                     <table className="table table-bordered">
@@ -79,6 +93,7 @@ function EmployeesTable() {
                 <div className="header">
                     <Link to={"/employee/create"} className="btn add_btn">
                         Add Employee
+                        <span><i class="bi bi-plus-circle-fill mx-2"></i></span>
                     </Link>
                 </div>
                 <div>
@@ -111,24 +126,9 @@ function EmployeesTable() {
                                         <td>{item.email}</td>
                                         <td>{item.address}</td>
                                         <td className="actions">
-                                            <button
-                                                className="btn btn-secondary mx-2"
-                                                onClick={() => handleView(item.id)}
-                                            >
-                                                View
-                                            </button>
-                                            <button
-                                                className="btn btn-primary"
-                                                onClick={() => handleEdit(item.id)}
-                                            >
-                                                Edit
-                                            </button>
-                                            <button
-                                                className="btn btn-danger mx-2"
-                                                onClick={() => handleDelete(item.id)}
-                                            >
-                                                Delete
-                                            </button>
+                                            <i class="bi bi-eye-fill mx-2" onClick={() => handleView(item.id)}></i>
+                                            <i class="bi bi-pencil-fill mx-2" onClick={() => handleEdit(item.id)}></i>
+                                            <i class="bi bi-trash-fill" onClick={() => handleDelete(item.id)}></i>
                                         </td>
                                     </tr>
                                 );
