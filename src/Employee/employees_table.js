@@ -97,7 +97,7 @@ function EmployeesTable() {
                     </Link>
                 </div>
                 <div>
-                    <p className="text">Here we can show dynamic data from json </p>
+                    <p className="ml-40 ">Here we can show dynamic data from json </p>
                 </div>
 
                 <div>
